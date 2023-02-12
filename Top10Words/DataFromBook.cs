@@ -3,28 +3,27 @@ namespace Top10Words;
 public class DataFromBook
 {
     private string _fileName;
-    private IEnumerable<string> _bookText;
+    public IEnumerable<string> BookText;
+
+    // public IEnumerable<string> WordsList
+    // {
+    //     get
+    //     {
+    //         var wordsList = _bookText.SelectMany(line => line.Split(" "));
+    //         return wordsList;
+    //     }
+    // }
+
+
     public DataFromBook(string fileName)
     {
         _fileName = fileName;
-        _bookText = File.ReadLines(_fileName);
-    }
-    
-    public int GetAllWordsCount()
-    {
-        var wordsCount = _bookText.SelectMany(line => line.Split(" ")).Count();
-        return wordsCount;
+        BookText = File.ReadLines(_fileName);
     }
 
-    public IEnumerable<CountWordPair> GetTop10FrequentWords()
-    {
-        var top10words = 
-            (from word in _bookText.SelectMany(line => line.Split(" "))
-                group word by word into cgroup
-                let count = cgroup.Count()
-                orderby count descending
-                select new CountWordPair { Count = count, Word = cgroup.Key }).Take(10);
-
-        return top10words;
+    public IEnumerable<string> GetWordsList()
+    {    
+        var wordsList = BookText.SelectMany(line => line.Split(" ")); 
+        return wordsList;
     }
 }

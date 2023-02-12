@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
 using Top10Words;
 
 Console.WriteLine("Hello, World!");
@@ -7,13 +8,14 @@ Console.WriteLine("Hello, World!");
 var bookFilename = @"../../../Book.txt";
 var dataFromBook = new DataFromBook(bookFilename);
 
-var countWords = dataFromBook.GetAllWordsCount();
+var bookCalculations = new BookCalculations(dataFromBook);
+var countWords = bookCalculations.GetAllWordsCount();
 
 var csvFilename = "wordscount.txt";
 var csvText = $"Words count: {countWords}";
 File.WriteAllText(csvFilename, csvText);
 
-var top10words = dataFromBook.GetTop10FrequentWords();
+var top10words = bookCalculations.GetTop10FrequentWords();
 
 foreach (var countWordPair in top10words)
 {
