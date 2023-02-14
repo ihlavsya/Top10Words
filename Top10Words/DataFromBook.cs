@@ -22,8 +22,11 @@ public class DataFromBook
     }
 
     public IEnumerable<string> GetWordsList()
-    {    
-        var wordsList = BookText.SelectMany(line => line.Split(" ")); 
+    {
+        var wordsList = BookText
+            .Select(Utils.RemoveSpecialCharacters)
+            .SelectMany(line => line.Split(' '))
+            .Select(word => word.ToLower()); 
         return wordsList;
     }
 }

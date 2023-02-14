@@ -1,9 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Diagnostics;
 using Top10Words;
-
-Console.WriteLine("Hello, World!");
 
 var bookFilename = @"../../../Book.txt";
 var dataFromBook = new DataFromBook(bookFilename);
