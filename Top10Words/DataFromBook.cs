@@ -20,13 +20,7 @@ public class DataFromBook
         _fileName = fileName;
         BookText = File.ReadLines(_fileName);
     }
-
-    public IEnumerable<string> GetWordsList()
-    {
-        var wordsList = BookText
-            .Select(Utils.RemoveSpecialCharacters)
-            .SelectMany(line => line.Split(' '))
-            .Select(word => word.ToLower()); 
-        return wordsList;
-    }
+    // remove it from here. this class should be almost empty
+    // засунути цей метод в інший клас
+    // думай як в тбе можуть бути багато книжок і багато різних імплементацій одного інтерфейсу
 }
