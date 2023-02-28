@@ -23,13 +23,15 @@
 .vs/
 [Bb]in/
 [Oo]bj/
+
 _UpgradeReport_Files/
 [Pp]ackages/
 
-bin
-obj
 packages
-
+bin/
+obj/
 Thumbs.db
 Desktop.ini
 .DS_Store
+../Top10WordsTest/bin/
+../Top10WordsTest/obj/

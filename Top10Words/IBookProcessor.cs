@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Top10Words;
 
 public interface IBookProcessor
