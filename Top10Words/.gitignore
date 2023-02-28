@@ -33,3 +33,5 @@ obj/
 Thumbs.db
 Desktop.ini
 .DS_Store
+../Top10WordsTest/bin/
+../Top10WordsTest/obj/
