@@ -15,7 +15,7 @@ public class DataFromBook
     public DataFromBook(string fileName)
     {
         _fileName = fileName;
-        if (_fileName != null) BookText = File.ReadLines(_fileName);
+        BookText = File.ReadLines(_fileName);
     }
     // remove it from here. this class should be almost empty
     // засунути цей метод в інший клас
