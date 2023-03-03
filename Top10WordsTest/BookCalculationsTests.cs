@@ -1,21 +1,18 @@
-using System.Collections;
 using Top10Words;
 
 namespace Top10WordsTest;
 
-[TestFixture]
+[TestFixture(@"../../../Book.txt")]
 public class BookCalculationsTests
 {
-    private DataFromBook _dataFromBook;
+    private readonly DataFromBook _dataFromBook;
     private BookCalculationsLinq _bookCalculationsLinq;
 
-    [SetUp]
-    public void Setup()
+    public BookCalculationsTests(string? filename)
     {
-        var bookFilename = @"../../../Book.txt";
-        _dataFromBook = new DataFromBook(bookFilename);
+        _dataFromBook = new DataFromBook(filename);
         var bookProcessor = new BookProcessor();
-        // _bookCalculationsLinq = new BookCalculationsLinq(_dataFromBook, bookProcessor);
+        _bookCalculationsLinq = new BookCalculationsLinq(_dataFromBook, bookProcessor);
     }
 
     [Test]
@@ -26,22 +23,22 @@ public class BookCalculationsTests
 
         Assert.That(actual, Is.EqualTo(expected));
     }
-    //
-    // [Test]
-    // public void GetTop10FrequentWords_Return3Groups()
-    // {
-    //     var expected = new Dictionary<string, int>()
-    //     {
-    //         {"the", 5},
-    //         {"in", 3},
-    //         {"beginning", 2}
-    //     };
-    //     var ienumerable = _bookCalculationsLinq.GetTop10FrequentWords();
-    //     var actual = new Dictionary<string, int>();
-    //     foreach (var countWordPair in ienumerable)
-    //     {
-    //         actual.Add(countWordPair.Word, countWordPair.Count);
-    //     }
-    //     Assert.That(actual, Is.EquivalentTo(expected));
-    // }
+    
+    [Test]
+    public void GetTop10FrequentWords_Return3Groups()
+    {
+        var expected = new Dictionary<string, int>()
+        {
+            {"the", 5},
+            {"in", 3},
+            {"beginning", 2}
+        };
+        var ienumerable = _bookCalculationsLinq.GetTop10FrequentWords();
+        var actual = new Dictionary<string, int>();
+        foreach (var countWordPair in ienumerable)
+        {
+            actual.Add(countWordPair.Word, countWordPair.Count);
+        }
+        Assert.That(actual, Is.EquivalentTo(expected));
+    }
 }
