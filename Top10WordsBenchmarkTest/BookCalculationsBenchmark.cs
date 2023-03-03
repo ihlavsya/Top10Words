@@ -10,13 +10,6 @@ public class BookCalculationsBenchmark
     private readonly BookCalculationsLinq _bookCalculationsLinq = new BookCalculationsLinq();
     private readonly IBookCalculations _bookCalculationsDictionary = new BookCalculationsDictionary();
 
-    [GlobalSetup]
-    public void Setup()
-    {
-        while(!System.Diagnostics.Debugger.IsAttached)
-            Thread.Sleep(TimeSpan.FromMilliseconds(100));
-    }
-    
     [Benchmark]
     public void GetTop10FrequentWordsLinq()
     {
