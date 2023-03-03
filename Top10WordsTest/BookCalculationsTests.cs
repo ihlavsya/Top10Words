@@ -6,9 +6,9 @@ namespace Top10WordsTest;
 public class BookCalculationsTests
 {
     private readonly DataFromBook _dataFromBook;
-    private BookCalculationsLinq _bookCalculationsLinq;
+    private readonly BookCalculationsLinq _bookCalculationsLinq;
 
-    public BookCalculationsTests(string? filename)
+    public BookCalculationsTests(string filename)
     {
         _dataFromBook = new DataFromBook(filename);
         var bookProcessor = new BookProcessor();
