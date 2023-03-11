@@ -17,7 +17,7 @@ var bookCalculationsDictionary = new BookCalculationsDictionary(dataFromBook, bo
 var watch = System.Diagnostics.Stopwatch.StartNew();
 
 var top10Words = bookCalculationsLinq.GetTop10FrequentWords();
-var countWords = bookCalculationsLinq.GetAllWordsCount();
+var countWords = bookProcessor.GetWordsList(dataFromBook.BookText).Count();
 var countUniqueWords = bookCalculationsDictionary.GetDictionaryWords().Count;
 
 watch.Stop();

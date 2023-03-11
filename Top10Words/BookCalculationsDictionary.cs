@@ -2,20 +2,12 @@ namespace Top10Words;
 
 public class BookCalculationsDictionary:IBookCalculations
 {
-    private DataFromBook _dataFromBook;
-    private IBookProcessor _bookProcessor;
+    private readonly DataFromBook _dataFromBook;
+    private readonly IBookProcessor _bookProcessor;
     public BookCalculationsDictionary(DataFromBook dataFromBook, IBookProcessor bookProcessor)
     {
         _dataFromBook = dataFromBook;
         _bookProcessor = bookProcessor;
-    }
-    
-    public BookCalculationsDictionary()
-    {
-        var path = "../../../Book.txt";
-        string fullPath = Path.GetFullPath(path);
-        _dataFromBook = new DataFromBook(fullPath);
-        _bookProcessor = new BookProcessor();
     }
 
     public Dictionary<string, int> GetDictionaryWords()

@@ -3,15 +3,8 @@ namespace Top10Words;
 public class DataFromBook
 {
     private readonly string _fileName;
-    public IEnumerable<string> BookText;
-    // public IEnumerable<string> WordsList
-    // {
-    //     get
-    //     {
-    //         var wordsList = _bookText.SelectMany(line => line.Split(" "));
-    //         return wordsList;
-    //     }
-    // }
+
+    public IEnumerable<string> BookText { get; }
     public DataFromBook(string fileName)
     {
         _fileName = fileName;

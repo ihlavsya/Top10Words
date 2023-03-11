@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
 using Top10Words;
 
 namespace Top10WordsTest;

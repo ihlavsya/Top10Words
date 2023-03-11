@@ -16,15 +16,6 @@ public class BookCalculationsTests
     }
 
     [Test]
-    public void GetAllWordsCount_Return10()
-    {
-        var expected = 10;
-        var actual = _bookCalculationsLinq.GetAllWordsCount();
-
-        Assert.That(actual, Is.EqualTo(expected));
-    }
-    
-    [Test]
     public void GetTop10FrequentWords_Return3Groups()
     {
         var expected = new Dictionary<string, int>()

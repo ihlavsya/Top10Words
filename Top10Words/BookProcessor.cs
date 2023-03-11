@@ -2,7 +2,7 @@ namespace Top10Words;
 
 public class BookProcessor : IBookProcessor
 {
-    private readonly char [] _delimiterChars = {
+    private static readonly char [] _delimiterChars = {
         ' ', ',', '.', ':', '\t'
     };
     public IEnumerable<string> GetWordsList(IEnumerable<string> bookText)
