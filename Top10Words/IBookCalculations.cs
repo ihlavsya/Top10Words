@@ -2,5 +2,5 @@ namespace Top10Words;
 
 public interface IBookCalculations
 {
-    public void GetTop10FrequentWords();
+    public IEnumerable<CountWordPair> GetTop10FrequentWords();
 }

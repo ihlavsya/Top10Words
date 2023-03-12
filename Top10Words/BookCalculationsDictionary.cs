@@ -1,29 +1,16 @@
-using System.Collections.Generic;
-using System.Linq;
-using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Engines;
-using BenchmarkDotNet.Jobs;
-
 namespace Top10Words;
 
 public class BookCalculationsDictionary:IBookCalculations
 {
-    private DataFromBook _dataFromBook;
-    private IBookProcessor _bookProcessor;
-    private readonly Consumer _consumer = new Consumer();
-    // public BookCalculationsDictionary(DataFromBook dataFromBook, IBookProcessor bookProcessor)
-    // {
-    //     _dataFromBook = dataFromBook;
-    //     _bookProcessor = bookProcessor;
-    // }
-    public BookCalculationsDictionary()
+    private readonly DataFromBook _dataFromBook;
+    private readonly IBookProcessor _bookProcessor;
+    public BookCalculationsDictionary(DataFromBook dataFromBook, IBookProcessor bookProcessor)
     {
-        _dataFromBook = new DataFromBook(@"/Users/mariialeos/RiderProjects/Top10Words/Top10Words/Book.txt");
-        _bookProcessor = new BookProcessor();
+        _dataFromBook = dataFromBook;
+        _bookProcessor = bookProcessor;
     }
-    
-    [Benchmark]
-    public void GetTop10FrequentWords()
+
+    public Dictionary<string, int> GetDictionaryWords()
     {
         var words = _bookProcessor.GetWordsList(_dataFromBook.BookText);
         var dict = new Dictionary<string, int>();
@@ -39,6 +26,13 @@ public class BookCalculationsDictionary:IBookCalculations
                 dict[word] = 1;
             }
         }
+
+        return dict;
+    }
+
+    public IEnumerable<CountWordPair> GetTop10FrequentWords()
+    {
+        var dict = GetDictionaryWords();
         
         // you also need to take first 10 elements
         List<CountWordPair> countWordPairs = new List<CountWordPair>();
@@ -47,6 +41,7 @@ public class BookCalculationsDictionary:IBookCalculations
             countWordPairs.Add(new CountWordPair(){Count = countWordPair.Value, Word = countWordPair.Key});
         }
 
-        countWordPairs.OrderByDescending(x => x.Count).Take(10).Consume(_consumer);
+        var top10Words = countWordPairs.OrderByDescending(x => x.Count).Take(10);
+        return top10Words;
     }
 }
