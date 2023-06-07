@@ -1,23 +1,10 @@
-using System.Collections.Generic;
-using System.IO;
-
 namespace Top10Words;
 
 public class DataFromBook
 {
-    private string _fileName;
-    public IEnumerable<string> BookText;
+    private readonly string _fileName;
 
-    // public IEnumerable<string> WordsList
-    // {
-    //     get
-    //     {
-    //         var wordsList = _bookText.SelectMany(line => line.Split(" "));
-    //         return wordsList;
-    //     }
-    // }
-
-
+    public IEnumerable<string> BookText { get; }
     public DataFromBook(string fileName)
     {
         _fileName = fileName;
