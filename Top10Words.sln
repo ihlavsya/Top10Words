@@ -1,10 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10Words", "Top10Words\Top10Words.csproj", "{8A2B44B0-E5F1-4AC3-8A64-B7F100349523}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top10Words", "Top10Words\Top10Words.csproj", "{8A2B44B0-E5F1-4AC3-8A64-B7F100349523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10WordsTest", "Top10WordsTest\Top10WordsTest.csproj", "{5B3ED523-CBBB-4B14-8990-202EC01C38EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top10WordsTest", "Top10WordsTest\Top10WordsTest.csproj", "{5B3ED523-CBBB-4B14-8990-202EC01C38EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10WordsBenchmarkTest", "Top10WordsBenchmarkTest\Top10WordsBenchmarkTest.csproj", "{EF531FD8-3E4D-4B48-AC62-71B41ED638D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10WordsWebAPI", "Top10WordsWebAPI\Top10WordsWebAPI.csproj", "{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10Words.DAL", "Top10Words.DAL\Top10Words.DAL.csproj", "{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,19 @@ Global
 		{EF531FD8-3E4D-4B48-AC62-71B41ED638D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF531FD8-3E4D-4B48-AC62-71B41ED638D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF531FD8-3E4D-4B48-AC62-71B41ED638D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ADAE153-8A67-423D-BC94-F2CE2C3598C3}
 	EndGlobalSection
 EndGlobal
