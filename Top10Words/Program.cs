@@ -11,14 +11,14 @@ if (bookFilename == null)
 var dataFromBook = new DataFromBook(bookFilename);
 var bookProcessor = new BookProcessor();
 
-var bookCalculationsLinq = new BookCalculationsLinq(dataFromBook, bookProcessor);
-var bookCalculationsDictionary = new BookCalculationsDictionary(dataFromBook, bookProcessor);
+var bookCalculationsLinq = new BookCalculationsLinq(bookProcessor);
+var bookCalculationsDictionary = new BookCalculationsDictionary(bookProcessor);
 
 var watch = System.Diagnostics.Stopwatch.StartNew();
 
-var top10Words = bookCalculationsLinq.GetTop10FrequentWords();
+var top10Words = bookCalculationsLinq.GetTop10FrequentWords(dataFromBook.BookText);
 var countWords = bookProcessor.GetWordsList(dataFromBook.BookText).Count();
-var countUniqueWords = bookCalculationsDictionary.GetDictionaryWords().Count;
+var countUniqueWords = bookCalculationsDictionary.GetDictionaryWords(dataFromBook.BookText).Count;
 
 watch.Stop();
 var elapsedMs = watch.ElapsedMilliseconds;

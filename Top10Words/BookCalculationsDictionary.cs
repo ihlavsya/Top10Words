@@ -2,17 +2,15 @@ namespace Top10Words;
 
 public class BookCalculationsDictionary:IBookCalculations
 {
-    private readonly DataFromBook _dataFromBook;
     private readonly IBookProcessor _bookProcessor;
-    public BookCalculationsDictionary(DataFromBook dataFromBook, IBookProcessor bookProcessor)
+    public BookCalculationsDictionary(IBookProcessor bookProcessor)
     {
-        _dataFromBook = dataFromBook;
         _bookProcessor = bookProcessor;
     }
 
-    public Dictionary<string, int> GetDictionaryWords()
+    public Dictionary<string, int> GetDictionaryWords(IEnumerable<string> bookText)
     {
-        var words = _bookProcessor.GetWordsList(_dataFromBook.BookText);
+        var words = _bookProcessor.GetWordsList(bookText);
         var dict = new Dictionary<string, int>();
 
         foreach (var word in words)
@@ -30,9 +28,9 @@ public class BookCalculationsDictionary:IBookCalculations
         return dict;
     }
 
-    public IEnumerable<CountWordPair> GetTop10FrequentWords()
+    public IEnumerable<CountWordPair> GetTop10FrequentWords(IEnumerable<string> bookText)
     {
-        var dict = GetDictionaryWords();
+        var dict = GetDictionaryWords(bookText);
         
         // you also need to take first 10 elements
         List<CountWordPair> countWordPairs = new List<CountWordPair>();
