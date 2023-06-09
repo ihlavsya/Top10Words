@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Top10Words.BL;
+using Top10Words.DAL;
 using Top10Words.DAL.EFCore;
+using Top10Words.DAL.Entities;
+using Top10Words.DAL.Repositories;
+using Top10WordsWebAPI.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +15,11 @@ builder.Services.AddDbContext<Top10WordsContext>(options =>
                 configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(Top10WordsContext).Assembly.FullName)));
 
-builder.Services.AddScoped<Top10WordsContext>(provider => provider.GetService<Top10WordsContext>());
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped<DbContext, Top10WordsContext>();
+builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<IRepository<Book>, GenericRepository<Book>>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

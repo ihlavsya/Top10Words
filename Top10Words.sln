@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top10WordsTest", "Top10Word
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10WordsBenchmarkTest", "Top10WordsBenchmarkTest\Top10WordsBenchmarkTest.csproj", "{EF531FD8-3E4D-4B48-AC62-71B41ED638D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10WordsWebAPI", "Top10WordsWebAPI\Top10WordsWebAPI.csproj", "{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top10WordsWebAPI", "Top10WordsWebAPI\Top10WordsWebAPI.csproj", "{AD387527-0702-4D6E-B8D4-61EC7FF2DE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10Words.DAL", "Top10Words.DAL\Top10Words.DAL.csproj", "{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top10Words.DAL", "Top10Words.DAL\Top10Words.DAL.csproj", "{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top10Words.BL", "Top10Words.BL\Top10Words.BL.csproj", "{286CCFC0-1796-4066-A8EA-54A2247CA645}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4232CEB7-DCAA-4E18-9CAF-AB12333BAB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286CCFC0-1796-4066-A8EA-54A2247CA645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286CCFC0-1796-4066-A8EA-54A2247CA645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286CCFC0-1796-4066-A8EA-54A2247CA645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286CCFC0-1796-4066-A8EA-54A2247CA645}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
